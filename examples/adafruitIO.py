@@ -72,14 +72,6 @@ io = IO_HTTP(aio_username, aio_key, requests)
 i2c = board.I2C()
 bme680 = adafruit_bme680.Adafruit_BME680_I2C(i2c, debug=False)
 
-# change this to match the location's pressure (hPa) at sea level
-bme680.sea_level_pressure = 1013.25
-
-# You will usually have to add an offset to account for the temperature of
-# the sensor. This is usually around 5 degrees but varies by use. Use a
-# separate temperature sensor to calibrate this one.
-temperature_offset = -5
-
 # Feeds
 
 temperatureFeed = getFeed("temperature")
@@ -99,7 +91,7 @@ update_lcd  = 3.0
 #-------------------------------------------------------------------
 
 while True:
-    t = bme680.temperature + temperature_offset
+    t = bme680.temperature
     h = bme680.relative_humidity
     p = bme680.pressure
     
