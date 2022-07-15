@@ -14,8 +14,6 @@ vcnl4040 = adafruit_vcnl4040.VCNL4040(i2c)
 # Measure
 #-------------------------------------------------------------------
 
-print ("CHECKING SENSORS")
-
 while True:
     print('===============================')
     print ('T:',bme680.temperature)
@@ -25,4 +23,4 @@ while True:
     print ('PROX:',vcnl4040.proximity)
     print ('LUX:',vcnl4040.lux)
 
-    time.sleep(1.0)
+    time.sleep(5.0)
