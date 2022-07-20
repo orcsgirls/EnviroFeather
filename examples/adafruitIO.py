@@ -17,8 +17,7 @@ from adafruit_io.adafruit_io import IO_HTTP, AdafruitIO_RequestError
 def getFeed(name):
     try:
         feedID = io.get_feed(name)
-    except RequestError:
-        feed = Feed(name=name)
+    except AdafruitIO_RequestError:
         feedID = io.create_new_feed(name)
     return feedID
 
