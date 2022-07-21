@@ -12,7 +12,7 @@ battery_monitor = LC709203F(board.I2C())
 # Update to match the mAh of your battery for more accurate readings.
 # Can be MAH100, MAH200, MAH400, MAH500, MAH1000, MAH2000, MAH3000.
 # Choose the closest match. Include "PackSize." before it, as shown.
-battery_monitor.pack_size = PackSize.MAH400
+battery_monitor.pack_size = PackSize.MAH500
 
 #--------------------------------------------------------------
 
